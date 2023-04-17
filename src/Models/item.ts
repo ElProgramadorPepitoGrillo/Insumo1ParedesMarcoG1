@@ -4,5 +4,10 @@ export interface Item{
   apellido:string;
   id:string;
 }
-
+export interface e{
+  id:string
+  NombrePlato:string
+  precio:number
+  
+}
 
