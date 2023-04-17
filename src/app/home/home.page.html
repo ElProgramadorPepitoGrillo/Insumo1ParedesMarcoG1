@@ -27,12 +27,25 @@
     <ion-icon name="pencil-outline" slot="start"></ion-icon>
     <ion-input type="text" placeholder="Calificacion" [(ngModel)]="newPersona.apellido"></ion-input>
   </ion-item>
-  </ion-list>
-<ion-list>
+
+
+
+</ion-list>
+<ion-list style="width: 25%;">
   <ion-item *ngFor="let p of Personas" >
-    <ion-label>{{p.cedula}}</ion-label>
-    <ion-label>{{p.nombre}}</ion-label>
-    <ion-label>{{p.apellido}}</ion-label>
+
+    <ion-card>
+      <img alt="{{p.cedula}}" src="https://www.tuexperto.com/wp-content/uploads/2022/01/paginas-descargar-fondos-de-pantalla-1200x640.jpg.webp" />
+      <ion-card-header>
+        <ion-card-title>{{p.cedula}}</ion-card-title>
+        <ion-card-subtitle>{{p.nombre}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{p.apellido}}  
+        </ion-card-content>
+    </ion-card>
+
     <ion-button (click)="delete(p)" color="danger" >
       <ion-icon slot="icon-only" name="close-circle-outline" ></ion-icon>
     </ion-button>
