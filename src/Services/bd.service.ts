@@ -27,10 +27,10 @@ export class BdService {
     return collectionData(ref,{idField:'id'}) as Observable<T[]>;
   }
 
-  delete<T>(enlace:string,id:string){
+  async delete<T>(enlace:string,id:string){
     const ruta:string = `${enlace}/${id}`
     const ref = doc(this.firestore,ruta);
-    return deleteDoc(ref);
+    return await deleteDoc(ref);
   }
 
   async getChanges(enlace:string,converter:any){
@@ -39,6 +39,6 @@ export class BdService {
     return querySnapshot;
   }
   edit(){
-
+    
   }
 }
