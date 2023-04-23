@@ -19,6 +19,9 @@ export class HomePage {
   private enlace:string = 'Personas';
   public Platos:Datos []=[];
   public Personas:Item[]=[];
+  url1:any=null
+
+  
 
   public newPlato:Datos={
     id: '',
@@ -64,6 +67,18 @@ export class HomePage {
     });
 
   }
+  imag(event:any){
+    if(event.target.files && event.target.files[0] ){
+      const reader= new FileReader();
+      reader.onload=(e:any)=>{
+        this.url1=e.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+    else{
+      this.url1=null;
+    }
+  }
 
   clean(){
     this.newPlato.id="";
@@ -71,7 +86,9 @@ export class HomePage {
     this.newPlato.calificacion=0;
     this.newPlato.precio=0;
     this.newPlato.foto='';
+    this.url1=null;
     }
+
   }
 
 
