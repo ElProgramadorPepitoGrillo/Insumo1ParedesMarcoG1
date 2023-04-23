@@ -13,47 +13,61 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-list class="list-formulario">
-  <ion-item>
-    <ion-icon name="create-outline" slot="start"></ion-icon>
-    <ion-input type="text" placeholder="Nombre" [(ngModel)]="newPersona.cedula" ></ion-input>
-  </ion-item>
+  <div class="contenedor">
+    <div class="dato">
+      <ion-list class="list-formulario">
+        <ion-item>
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          <ion-input label="Nombre" label-placement="floating" fill="solid" type="text" placeholder="Enter Text"
+            [(ngModel)]="newPersona.cedula"></ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-icon name="pencil-outline" slot="start"></ion-icon>
-    <ion-input type="text" placeholder="Precio" [(ngModel)]="newPersona.nombre"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="pencil-outline" slot="start"></ion-icon>
-    <ion-input type="text" placeholder="Calificacion" [(ngModel)]="newPersona.apellido"></ion-input>
-  </ion-item>
+        <ion-item>
+          <ion-icon name="pencil-outline" slot="start"></ion-icon>
+          <ion-input label="Precio" label-placement="floating" fill="solid" type="text" placeholder="Enter Text"
+            [(ngModel)]="newPersona.nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="pencil-outline" slot="start"></ion-icon>
+          <ion-input label="Calificacion" label-placement="floating" fill="solid" type="text" placeholder="Enter Text"
+            [(ngModel)]="newPersona.apellido"></ion-input>
+        </ion-item>
 
 
 
-</ion-list>
-<ion-list style="width: 25%;">
-  <ion-item *ngFor="let p of Personas" >
+      </ion-list>
+    </div>
 
-    <ion-card>
-      <img alt="{{p.cedula}}" src="https://www.tuexperto.com/wp-content/uploads/2022/01/paginas-descargar-fondos-de-pantalla-1200x640.jpg.webp" />
-      <ion-card-header>
-        <ion-card-title>{{p.cedula}}</ion-card-title>
-        <ion-card-subtitle>{{p.nombre}}</ion-card-subtitle>
-      </ion-card-header>
+    <div class="imagen">
+      aqui va la imagen
+    </div>
+  </div>
 
-      <ion-card-content>
-        {{p.apellido}}  
+
+  <ion-list style="width: 25%;">
+    <ion-item *ngFor="let p of Platos">
+
+      <ion-card>
+        <img alt="{{p.precio}}"
+          src="https://www.tuexperto.com/wp-content/uploads/2022/01/paginas-descargar-fondos-de-pantalla-1200x640.jpg.webp" />
+        <ion-card-header>
+          <ion-card-title>{{p.calificacion}}</ion-card-title>
+          <ion-card-subtitle>{{p.NombrePlato}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          {{p.id}}
         </ion-card-content>
-    </ion-card>
+      </ion-card>
 
-    <ion-button (click)="delete(p)" color="danger" >
-      <ion-icon slot="icon-only" name="close-circle-outline" ></ion-icon>
-    </ion-button>
-  </ion-item>
-</ion-list>
-<ion-fab vertical="bottom" horizontal="end" >
-<ion-fab-button (click)="save()" size="small" color="success">
-  <ion-icon name="add-circle-outline"></ion-icon>
-</ion-fab-button>
-</ion-fab>
+      <ion-button (click)="delete(p)" color="danger">
+        <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="save()" size="small" color="success">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
