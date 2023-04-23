@@ -37,17 +37,22 @@
 
 .dato{
   width: 40%;
-  border: solid black;
   margin: 1%;
+  border-radius: 20px;
 
 }
 .imagen{
   margin-left: 19%;  
+  padding-top: 9%;
   width: 30%;
-  height: 250px;  
-  border: solid black;
 }
 .contenedor{
+
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+border-radius: 21px;
   margin: 1%;
   display: flex;
   background-color: aquamarine;
@@ -55,4 +60,10 @@
 .NMP{
   font-family: cursive;
   font-size: 20px;
+}
+.formulario{
+  border-radius: 20px; 
+}
+.mostrar{
+  border-radius: 20px;
 }

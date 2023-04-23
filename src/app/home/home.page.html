@@ -15,7 +15,7 @@
 
   <div class="contenedor">
     <div class="dato">
-      <ion-list class="list-formulario">
+      <ion-list class="formulario">
         <ion-item>
           <ion-icon name="create-outline" slot="start"></ion-icon>
           <ion-input label="Nombre" label-placement="floating" fill="solid" type="text" placeholder="Enter Text"
@@ -39,18 +39,17 @@
     </div>
 
     <div class="imagen">
-      <img *ngIf="url1" [src]="url1" alt="vista previa" >
+      <img *ngIf="url1" [src]="url1" alt="vista previa">
       <input type="file" (change)="imag($event)" [(ngModel)]="newPlato.foto">
     </div>
   </div>
 
 
-  <ion-list style="width: 25%;">
-    <ion-item *ngFor="let p of Platos">
+  <ion-list  class="mostrar">
+    <ion-item *ngFor="let p of Platos" class="mostrar">
 
       <ion-card>
-        <img alt="{{p.foto}}"
-          src="{{p.foto}}" />
+        <img alt="{{p.foto}}" src="{{p.foto}}" />
         <ion-card-header>
           <ion-item>
             <ion-icon name="star"></ion-icon>
@@ -63,7 +62,7 @@
 
         <ion-card-content>
           {{p.precio}} $
-          
+
         </ion-card-content>
       </ion-card>
 
@@ -75,7 +74,7 @@
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end">
-    <ion-fab-button (click)="save()"  size="small" color="success">
+    <ion-fab-button (click)="save()" size="small" color="success">
       <ion-icon name="add-circle-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
