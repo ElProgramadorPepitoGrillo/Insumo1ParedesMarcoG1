@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ToastService } from 'src/Services/toast.service';
 import { LoadingService } from 'src/Services/loading.service';
 import { CommonModule } from '@angular/common';
+import { copyFileSync } from 'fs';
 
 @Component({
   selector: 'app-home',
@@ -74,6 +75,7 @@ export class HomePage {
         this.url1=e.target.result;
       };
       reader.readAsDataURL(event.target.files[0]);
+      const fileName = new Date().getTime() + '.jpeg';      
     }
     else{
       this.url1=null;
