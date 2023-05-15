@@ -29,7 +29,9 @@ export class HomePage {
     NombrePlato: '',
     precio:0,
     calificacion: 0,
-    foto:''
+    foto:'',
+    Descripcion:''
+    
   };
 
   public newPersona:Item={

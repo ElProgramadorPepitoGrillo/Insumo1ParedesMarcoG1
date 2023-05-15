@@ -10,5 +10,6 @@ export interface Datos{
   precio:number
   calificacion: number
   foto:string  
+  Descripcion:string
 }
 
