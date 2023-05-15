@@ -90,6 +90,7 @@ export class HomePage {
     this.newPlato.calificacion=0;
     this.newPlato.precio=0;
     this.newPlato.foto='';
+    this.newPlato.Descripcion='';
     this.url1=null;
     }
 
